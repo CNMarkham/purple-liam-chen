@@ -22,6 +22,11 @@ public class breakingbrick : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("brick"))
         {
+            GameObject nextBrick = collision.gameObject.GetComponent<brick>().nextBrick;
+            if (nextBrick != null)
+            {
+                Instantiate(nextBrick, collision.gameObject.transform.position, Quaternion.identity);
+            }
             score++;
             Debug.Log(score);
             scoretext.text = score.ToString();
