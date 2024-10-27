@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class keymovement : MonoBehaviour
+public class playerscript : MonoBehaviour
 {
     public float speed;
     public GameObject bulletprefab;

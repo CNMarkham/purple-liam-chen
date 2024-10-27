@@ -159,7 +159,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314, a: 1}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -245,8 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies1: {fileID: 504559455074651563, guid: f94f4c3e0a725f24096b4a15da623ff6, type: 3}
-  enemies2: {fileID: 504559455074651563, guid: f94f4c3e0a725f24096b4a15da623ff6, type: 3}
-  enemies3: {fileID: 504559455074651563, guid: f94f4c3e0a725f24096b4a15da623ff6, type: 3}
   xspace: 2
   xoffset: -5
 --- !u!4 &909544484
