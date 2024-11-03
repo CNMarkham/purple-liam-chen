@@ -28,11 +28,21 @@ public class enemyscript : MonoBehaviour
         if (transform.position.x > 8f)
         {
             direction = Vector2.left;
+            movedown();
         }
 
         if (transform.position.x < -8f)
         {
             direction = Vector2.right;
+            movedown();
+        }
+    }
+
+    private void movedown()
+    {
+        foreach (enemyscript enemy in FindObjectsOfType(typeof(enemyscript)))
+        {
+            enemy.transform.Translate(Vector2.down);
         }
     }
 }
