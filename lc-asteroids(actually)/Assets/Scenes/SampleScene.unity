@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &323416796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4027406755651341712, guid: 6785957b7c50f574f9405106af26c0ed, type: 3}
+  m_PrefabInstance: {fileID: 8064238997043551335}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,10 +309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a01101db51f9041b8cdee5bf77d8f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookSpeed: 0
-  moveSpeed: 0
-  maxSpeed: 0
-  bulletPrefab: {fileID: 0}
+  lookSpeed: 200
+  moveSpeed: 5
+  maxSpeed: 5
+  bulletPrefab: {fileID: 323416796}
 --- !u!50 &1370667050
 Rigidbody2D:
   serializedVersion: 4
@@ -465,7 +470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7131412974107359011, guid: 9ee82085346d32f4aa60d6a4ea2a4ee9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.67
+      value: 13.800686
       objectReference: {fileID: 0}
     - target: {fileID: 7131412974107359011, guid: 9ee82085346d32f4aa60d6a4ea2a4ee9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -530,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875697692401237678, guid: 6785957b7c50f574f9405106af26c0ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.2793145
+      value: 13.41
       objectReference: {fileID: 0}
     - target: {fileID: 875697692401237678, guid: 6785957b7c50f574f9405106af26c0ed, type: 3}
       propertyPath: m_LocalPosition.z
@@ -567,6 +572,10 @@ PrefabInstance:
     - target: {fileID: 4027406755651341712, guid: 6785957b7c50f574f9405106af26c0ed, type: 3}
       propertyPath: m_Name
       value: bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333397245508692988, guid: 6785957b7c50f574f9405106af26c0ed, type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
