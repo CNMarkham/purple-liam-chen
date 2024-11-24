@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject rockprefab;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < 4; i++)
+        {
+            Vector3 randomPosition = new Vector3(Random.Range(-7, 7), Random.Range(-7, 7), 0f);
+            Instantiate(rockprefab, randomPosition, Quaternion.identity);
+        }
     }
 }
