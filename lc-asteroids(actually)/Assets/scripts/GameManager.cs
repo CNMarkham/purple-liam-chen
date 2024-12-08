@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            Vector3 randomposition = spawnpoints[0].position;
+            Vector3 randomposition = spawnpoints[Random.Range(0, 3)].position;
             Instantiate(rockprefab, randomposition, Quaternion.identity);
         }
     }
