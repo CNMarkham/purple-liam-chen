@@ -8959,8 +8959,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 453359052514249756, guid: 1c42ae61f367d304e9357abd2a5f1103, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9176691493762708805}
   m_SourcePrefab: {fileID: 100100000, guid: 1c42ae61f367d304e9357abd2a5f1103, type: 3}
+--- !u!1 &9176691493762708804 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 453359052514249756, guid: 1c42ae61f367d304e9357abd2a5f1103, type: 3}
+  m_PrefabInstance: {fileID: 9176691493762708803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9176691493762708805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9176691493762708804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17f2a8d71d41594eae7301f70c2696c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  initialdirection: {x: 0, y: 0}
+  obstaclelayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
