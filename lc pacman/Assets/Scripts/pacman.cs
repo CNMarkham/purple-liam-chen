@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class pacman : movement
 {
-    private bool occupied(Vector2 newDirection)
+    protected override void childUpdate()
     {
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position, Vector2.one * 0.75f, 0f, newDirection, 1.5f, obstaclelayer);
-       return hit.collider != null;
-    }
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-    protected void setDirection(Vector2 newdDirection)
-    {
-        if (!occupied(newdDirection))
+        if (horizontal != 0 || vertical != 0)
         {
-            direction = newdDirection;
-            nextdirection = Vector2.zero;
+            setDirection(new Vector2(horizontal, vertical));
         }
-        else
-        {
-            nextdirection = newdDirection;
-        }
-    }
-
-    void Update()
-    {
-        
+        transform.right = direction;
     }
 }
