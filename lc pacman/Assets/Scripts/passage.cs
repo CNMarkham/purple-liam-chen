@@ -7,7 +7,6 @@ public class passage : MonoBehaviour
     public Transform teleportPosition;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Teleport");
         Vector3 tempPos = teleportPosition.position;
         tempPos.z = collision.transform.position.z;
         collision.transform.position = tempPos;
