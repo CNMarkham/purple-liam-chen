@@ -39,16 +39,16 @@ public abstract class movement : MonoBehaviour
     }
 
 
-    protected void setDirection(Vector2 newdDirection)
+    protected void setDirection(Vector2 newDirection)
     {
-        if (!occupied(newdDirection))
+        if (!occupied(newDirection))
         {
-            direction = newdDirection;
+            direction = newDirection;
             nextDirection = Vector2.zero;
         }
         else
         {
-            nextDirection = newdDirection;
+            nextDirection = newDirection;
         }
     }
 

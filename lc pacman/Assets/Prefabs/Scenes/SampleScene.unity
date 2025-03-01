@@ -9797,7 +9797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4141072189497637832, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4141072189497637832, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9831,6 +9831,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7870029947562348456, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870029947562348456, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
+      propertyPath: initialDirection.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870029947562348456, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 8208610632339828501, guid: c8d81ecf8ccbd454fa7a08732fdf612a, type: 3}
       propertyPath: m_Name
       value: Ghost_Pinky
@@ -9854,7 +9866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 106880283854774791, guid: 6cdd51889af575c4b8ed3f06f87a07ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 106880283854774791, guid: 6cdd51889af575c4b8ed3f06f87a07ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9892,6 +9904,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Blinky
       objectReference: {fileID: 0}
+    - target: {fileID: 6139614312874546791, guid: 6cdd51889af575c4b8ed3f06f87a07ac, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139614312874546791, guid: 6cdd51889af575c4b8ed3f06f87a07ac, type: 3}
+      propertyPath: initialDirection.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139614312874546791, guid: 6cdd51889af575c4b8ed3f06f87a07ac, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9911,7 +9935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162375557448727778, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 162375557448727778, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9949,6 +9973,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost_Clyde
       objectReference: {fileID: 0}
+    - target: {fileID: 6201212631908173954, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201212631908173954, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
+      propertyPath: initialDirection.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201212631908173954, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
+      propertyPath: initialDirection.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6201212631908173954, guid: 54caa7159fef07f46bf74fb6b73d39ec, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9968,7 +10008,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 510916378232333364, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 510916378232333364, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10005,6 +10045,18 @@ PrefabInstance:
     - target: {fileID: 5730266937907933417, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
       propertyPath: m_Name
       value: Ghost_Inky
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005794195654381652, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005794195654381652, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
+      propertyPath: initialDirection.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005794195654381652, guid: d5fa09cbb8a7fbc4e804bd7b084a3a75, type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
