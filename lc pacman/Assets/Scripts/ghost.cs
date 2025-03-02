@@ -30,14 +30,20 @@ public class ghost : movement
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // check is ghost hits a node, change directions
-        nodescript node = collision.GetComponent<nodescript>();
+        Node node = collision.GetComponent<Node>();
 
         if (node != null)
         {
             int index = Random.Range(0, node.availableDriections.Count);
 
+            if (node.availableDriections[index] == -direction)
+            {
+                index += 1;
+            }
+
             setDirection(node.availableDriections[index]);
         }
+
     }
 
     private void leaveHome()
@@ -45,7 +51,7 @@ public class ghost : movement
         // switch from home mode to scatter mode
     }
 
-    public void fighten()
+    public void frighten()
     {
         // set ghost to frightened if not at home
     }
