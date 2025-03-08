@@ -15,6 +15,15 @@ public class ghost : movement
     private void Awake()
     {
         // set the original state of the ghost
+        transform.position = new Vector3(0, 2.5f, -1f);
+        direction = new Vector2(-1, 0);
+        atHome = false;
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
+        frightned = false;
+        Invoke("leaveHome", homeDuration);
     }
 
     protected override void childUpdate()
@@ -39,6 +48,11 @@ public class ghost : movement
             if (node.availableDriections[index] == -direction)
             {
                 index += 1;
+
+                if (index == node.availableDriections.Count)
+                {
+                    index = 0;
+                }
             }
 
             setDirection(node.availableDriections[index]);
