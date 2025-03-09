@@ -10,19 +10,16 @@ public class ghost : movement
     public GameObject white;
     public bool atHome;
     public float homeDuration;
-    private bool frightned;
+    private bool frightened;
 
     private void Awake()
     {
         // set the original state of the ghost
-        transform.position = new Vector3(0, 2.5f, -1f);
-        direction = new Vector2(-1, 0);
-        atHome = false;
         body.SetActive(true);
         eyes.SetActive(true);
         blue.SetActive(false);
         white.SetActive(false);
-        frightned = false;
+        frightened = false;
         Invoke("leaveHome", homeDuration);
     }
 
@@ -34,6 +31,27 @@ public class ghost : movement
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // see if ghost hits pacman or home wall
+        if (atHome && collision.gameObject.layer == LayerMask.NameToLayer("obstacle"))
+        {
+            setDirection(-direction);
+        }
+
+        if (collision.gameObject.CompareTag("Pacman"))
+        {
+            if (frightened)
+            {
+                transform.position = new Vector3(0, -0.5f, -1);
+                body.SetActive(false);
+                eyes.SetActive(true);
+                blue.SetActive(false);
+                white.SetActive(false);
+                atHome = true;
+            }
+            else
+            {
+
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,20 +81,47 @@ public class ghost : movement
     private void leaveHome()
     {
         // switch from home mode to scatter mode
+        transform.position = new Vector3(0, 2.5f, -1f);
+        direction = new Vector2(-1, 0);
+        atHome = false;
+        frightened = false;
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
     }
 
     public void frighten()
     {
         // set ghost to frightened if not at home
+        if (!atHome)
+        {
+            frightened = true;
+            body.SetActive(false);
+            eyes.SetActive(false);
+            blue.SetActive(true);
+            white.SetActive(false);
+            Invoke("flash", 4f);
+        }
     }
 
     private void flash()
     {
         // make ghost flash white
+        body.SetActive(false);
+        eyes.SetActive(false);
+        blue.SetActive(false);
+        white.SetActive(true);
+        Invoke("reset", 4f);
     }
 
     private void Reset()
     {
         // turns ghost back to normal
+        frightened = false;
+        body.SetActive(true);
+        eyes.SetActive(true);
+        blue.SetActive(false);
+        white.SetActive(false);
     }
 }
