@@ -46,10 +46,12 @@ public class ghost : movement
                 blue.SetActive(false);
                 white.SetActive(false);
                 atHome = true;
+                CancelInvoke();
+                Invoke("leaveHome", 4f);
             }
             else
             {
-
+                Destroy(collision.gameObject);
             }
         }
     }
@@ -115,7 +117,7 @@ public class ghost : movement
         Invoke("reset", 4f);
     }
 
-    private void Reset()
+    private void reset()
     {
         // turns ghost back to normal
         frightened = false;
