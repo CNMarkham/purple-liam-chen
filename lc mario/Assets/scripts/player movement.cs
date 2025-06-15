@@ -33,7 +33,7 @@ public class playermomvement : MonoBehaviour
 
     private void jump()
     {
-        hit = Physics2D.CircleCast(rb.position, 0.25f, Vector2.down, 0.375f, LayerMask.GetMask("Default"));
+        hit = Physics2D.CircleCast(rb.position, 0.5f, Vector2.down, 0.4f, LayerMask.GetMask("Default"));
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.Space))
         {
