@@ -37,7 +37,7 @@ public class playerbehaviour : MonoBehaviour
         big = false;
         StartCoroutine("changesize");
     }
-
+    
     public void grow()
     {
         if (big)
@@ -60,7 +60,7 @@ public class playerbehaviour : MonoBehaviour
 
         GetComponent<CapsuleCollider2D>().enabled = false;
 
-        GetComponent<Rigidbody2D>().velocity = Vector2.up * 10;
+        GetComponent<Rigidbody2D>().velocity = Vector2.up * 20;
         GetComponent<playermomvement>().enabled = false;
         Destroy(gameObject, 1f);
     }

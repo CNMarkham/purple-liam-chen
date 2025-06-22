@@ -14,7 +14,7 @@ public class goomba : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 GetComponent<enemymovement>().enabled = false;
                 Rigidbody2D playerRB = collision.gameObject.GetComponent<Rigidbody2D>();
-                playerRB.velocity = new Vector2(playerRB.velocity.x, 10);
+                playerRB.velocity = new Vector2(playerRB.velocity.x/4, 10);
                 Destroy(gameObject, 0.5f);
             }
             else
