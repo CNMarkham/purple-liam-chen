@@ -20,7 +20,8 @@ public class playerbehaviour : MonoBehaviour
         if (big)
         {
             shrink();
-        } else
+        }
+        else
         {
             death();
         }
