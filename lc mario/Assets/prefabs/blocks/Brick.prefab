@@ -145,7 +145,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: fb7f54d444de3a142b67b41355390c34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -165,3 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac900417456c925479c57e59f90d7628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  maxhits: -1
+  emptyblock: {fileID: 21300000, guid: 917d00ade388090499a00d7c642c7f7d, type: 3}

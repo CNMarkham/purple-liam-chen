@@ -8,6 +8,7 @@ public class blockhit : MonoBehaviour
     public int maxhits = -1;
     public Sprite emptyblock;
     private Animator animator;
+
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
@@ -18,6 +19,19 @@ public class blockhit : MonoBehaviour
         if (maxhits <= 0)
         {
             return;
+        }
+
+        if (item != null)
+        {
+            Instantiate(item, transform);
+            animator.SetTrigger("hit");
+            maxhits--;
+        }
+
+        if (maxhits == 0)
+        {
+            SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+            spriteRenderer.sprite = emptyblock;
         }
     }
 }

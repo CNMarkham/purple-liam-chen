@@ -17,7 +17,7 @@ public class playermomvement : MonoBehaviour
         jumping = false;
     }
 
-    
+
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -72,6 +72,32 @@ public class playermomvement : MonoBehaviour
             animator.SetFloat("velocityX", rb.velocity.x);
             animator.SetFloat("horizontalInput", Input.GetAxis("Horizontal"));
             animator.SetBool("inAir", hit.collider == null || jumping);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        float distance = 0.375f;
+
+        if (GetComponent<playerbehaviour>().big)
+        {
+            distance += 1f;
+        }
+
+        RaycastHit2D hitTop = Physics2D.CircleCast(rb.position, 0.25f, Vector2.up, distance, LayerMask.GetMask("Default"));
+
+        if (hitTop.collider != null)
+        {
+            Vector3 velocity = rb.velocity;
+            velocity.y = 0;
+            rb.velocity = velocity;
+            jumping = false;
+
+            blockhit blockHit = hitTop.collider.gameObject.GetComponent<blockhit>();
+            if (blockHit != null)
+            {
+                blockHit.hit();
+            }
         }
     }
 }
