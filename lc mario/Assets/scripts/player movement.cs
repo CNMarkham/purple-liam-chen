@@ -84,7 +84,7 @@ public class playermomvement : MonoBehaviour
             distance += 1f;
         }
 
-        RaycastHit2D hitTop = Physics2D.CircleCast(rb.position, 0.25f, Vector2.up, distance, LayerMask.GetMask("Default"));
+        RaycastHit2D hitTop = Physics2D.CircleCast(rb.position, 0.15f, Vector2.up, distance, LayerMask.GetMask("Default"));
 
         if (hitTop.collider != null)
         {

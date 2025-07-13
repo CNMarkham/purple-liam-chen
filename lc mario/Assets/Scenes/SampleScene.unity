@@ -132,6 +132,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1934150498765827009, guid: 5a2883b5cb3b0024ba2bec4d448ac651, type: 3}
+      propertyPath: big
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1934150498765827009, guid: 5a2883b5cb3b0024ba2bec4d448ac651, type: 3}
       propertyPath: bigRenderer
       value: 
       objectReference: {fileID: 925915842}
@@ -3880,9 +3884,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3095423604254976110, guid: c7b876100400acb4998242892c9eeb58, type: 3}
+      propertyPath: pos
+      value: 
+      objectReference: {fileID: 850854239}
+    - target: {fileID: 3095423604254976110, guid: c7b876100400acb4998242892c9eeb58, type: 3}
       propertyPath: item
       value: 
       objectReference: {fileID: 5663492346257945698, guid: 10f5b9c222cc3cf42b5fc3d32eceb606, type: 3}
+    - target: {fileID: 3095423604254976110, guid: c7b876100400acb4998242892c9eeb58, type: 3}
+      propertyPath: pos.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3095423604254976110, guid: c7b876100400acb4998242892c9eeb58, type: 3}
+      propertyPath: pos.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3095423604254976110, guid: c7b876100400acb4998242892c9eeb58, type: 3}
       propertyPath: maxhits
       value: 1
