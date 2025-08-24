@@ -8,7 +8,7 @@ public class deathbarrier : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<playerbehaviour>().hit();
+            collision.gameObject.GetComponent<playerbehaviour>().Hit();
         }
         else
         {

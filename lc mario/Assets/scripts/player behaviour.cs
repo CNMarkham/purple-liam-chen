@@ -15,7 +15,7 @@ public class playerbehaviour : MonoBehaviour
         big = false;
     }
 
-    public void hit()
+    public void Hit()
     {
         if (big)
         {

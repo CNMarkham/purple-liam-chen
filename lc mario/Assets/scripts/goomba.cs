@@ -19,7 +19,7 @@ public class goomba : MonoBehaviour
             }
             else
             {
-                collision.gameObject.GetComponent<playerbehaviour>().hit();
+                collision.gameObject.GetComponent<playerbehaviour>().Hit();
             }
         }
     }

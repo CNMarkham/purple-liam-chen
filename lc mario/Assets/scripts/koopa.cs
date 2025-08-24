@@ -44,7 +44,7 @@ public class koopa : MonoBehaviour
         }
         else
         {
-            collision.gameObject.GetComponent<playerbehaviour>().hit();
+            collision.gameObject.GetComponent<playerbehaviour>().Hit();
         }
     }
 

@@ -23,8 +23,8 @@ public class blockhit : MonoBehaviour
 
         if (item != null)
         {
-            Instantiate(item, // new Vector3(transform.position.x,transform.position.y + 1.0f,transform.position.z), Quaternion.identity);
-                transform);
+            Instantiate(item, new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z), Quaternion.identity);
+                //transform);
             animator.SetTrigger("hit");
             maxhits--;
             
