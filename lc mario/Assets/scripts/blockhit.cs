@@ -23,9 +23,9 @@ public class blockhit : MonoBehaviour
 
         if (item != null)
         {
-            Instantiate(item, //new Vector3(transform.position.x,transform.position.y + 0.1f,transform.position.z), Quaternion.identity);
-                transform);
+            Instantiate(item, transform);
             animator.SetTrigger("hit");
+            Invoke("ForceDynamic", 0.4f);
             maxhits--;
             
         }
@@ -34,6 +34,16 @@ public class blockhit : MonoBehaviour
         {
             SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             spriteRenderer.sprite = emptyblock;
+        }
+    }
+
+    public void ForceDynamic()
+    {
+        // tacky solution; make the mushroom turn dynamic
+        Rigidbody2D RB = GetComponentInChildren<Rigidbody2D>();
+        if (RB != null)
+        {
+            RB.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 }

@@ -66,7 +66,7 @@ public class playerbehaviour : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    private IEnumerator changesize()
+    public IEnumerator changesize()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector3 velocity = rb.velocity;
