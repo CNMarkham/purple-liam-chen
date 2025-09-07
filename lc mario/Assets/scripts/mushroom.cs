@@ -6,13 +6,15 @@ public class mushroom : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            return;
+            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            collision.gameObject.GetComponent<playerbehaviour>().grow();
+            Destroy(gameObject, 1.28f);
         }
         else
         {
-            collision.gameObject.GetComponent<playerbehaviour>().changesize();
+            return;
         }
     }
 }

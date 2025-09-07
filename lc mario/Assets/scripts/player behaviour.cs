@@ -66,7 +66,7 @@ public class playerbehaviour : MonoBehaviour
         Destroy(gameObject, 1f);
     }
 
-    public IEnumerator changesize()
+    private IEnumerator changesize()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         Vector3 velocity = rb.velocity;
@@ -75,11 +75,11 @@ public class playerbehaviour : MonoBehaviour
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 16; i > 0; i--)
         {
             bigRenderer.enabled ^= true;
             smallRenderer.enabled ^= true;
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(i / 128f);
         }
 
         rb.isKinematic = false;
