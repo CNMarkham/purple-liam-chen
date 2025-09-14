@@ -8,9 +8,8 @@ public class mushroom : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             collision.gameObject.GetComponent<playerbehaviour>().grow();
-            Destroy(gameObject, 1.28f);
+            Destroy(gameObject, 0f);
         }
         else
         {

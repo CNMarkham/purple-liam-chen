@@ -8001,15 +8001,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4091777330943197221, guid: ac5010205db2f624f89d318fe8c0a0ff, type: 3}
       propertyPath: m_Color.b
-      value: 0.5415094
+      value: 0.4343823
       objectReference: {fileID: 0}
     - target: {fileID: 4091777330943197221, guid: ac5010205db2f624f89d318fe8c0a0ff, type: 3}
       propertyPath: m_Color.g
-      value: 0.8554823
+      value: 0.7710735
       objectReference: {fileID: 0}
     - target: {fileID: 4091777330943197221, guid: ac5010205db2f624f89d318fe8c0a0ff, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.93207544
       objectReference: {fileID: 0}
     - target: {fileID: 5204155531797157252, guid: ac5010205db2f624f89d318fe8c0a0ff, type: 3}
       propertyPath: m_Name
