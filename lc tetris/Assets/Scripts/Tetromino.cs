@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ public class Tetromino : MonoBehaviour
 {
     private float previousTime;
     public float fallTime;
-    public int width = 10;
-    public int height = 20;
+    public int width;
+    public int height;
+    public Vector3 rotationPoint;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -53,7 +55,7 @@ public class Tetromino : MonoBehaviour
             int x = Mathf.RoundToInt(child.transform.position.x);
             int y = Mathf.RoundToInt(child.transform.position.y);
             
-            if (x <= 0 || y <= 0 || x >= width || y >= height)
+            if (x < -4 || y < -2 || x >= width || y >= height)
             {
                 return false;
             }
