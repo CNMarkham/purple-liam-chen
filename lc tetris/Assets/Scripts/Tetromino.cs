@@ -12,6 +12,16 @@ public class Tetromino : MonoBehaviour
     public Vector3 rotationPoint;
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            Vector3 convertedPoint = transform.TransformPoint(rotationPoint);
+            transform.RotateAround(convertedPoint, Vector3.forward, 90);
+            if (!ValidMove())
+            {
+                transform.RotateAround(convertedPoint, Vector3.forward, -90);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             transform.position = transform.position + Vector3.left;
@@ -45,7 +55,6 @@ public class Tetromino : MonoBehaviour
             }
             previousTime = Time.time;
         }
-
     }
 
     public bool ValidMove()
