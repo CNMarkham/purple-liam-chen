@@ -10,6 +10,8 @@ public class Tetromino : MonoBehaviour
     public int width;
     public int height;
     public Vector3 rotationPoint;
+    public static Transform[,] grid = new Transform[0, 0]; // fix later
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -24,34 +26,36 @@ public class Tetromino : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position = transform.position + Vector3.left;
+            transform.position += Vector3.left;
             if (!ValidMove())
             {
-                transform.position = transform.position - Vector3.left;
+                transform.position -= Vector3.left;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position = transform.position + Vector3.right;
+            transform.position += Vector3.right;
             if (!ValidMove())
             {
-                transform.position = transform.position - Vector3.right;
+                transform.position -= Vector3.right;
             }
         }
 
         float tempTime = fallTime;
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            tempTime = tempTime / 10;
+            tempTime /= 10;
         }
 
         if ((Time.time - previousTime) >= tempTime)
         {
-            transform.position = transform.position + Vector3.down;
+            transform.position += Vector3.down;
             if (!ValidMove())
             {
-                transform.position = transform.position - Vector3.down;
+                transform.position -= Vector3.down;
+                this.enabled = false;
+                FindObjectOfType<Spawner>().SpawnTertomino();
             }
             previousTime = Time.time;
         }
