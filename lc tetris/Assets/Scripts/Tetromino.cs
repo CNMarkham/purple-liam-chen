@@ -7,10 +7,10 @@ public class Tetromino : MonoBehaviour
 {
     private float previousTime;
     public float fallTime;
-    public int width;
-    public int height;
+    public static int width;
+    public static int height;
     public Vector3 rotationPoint;
-    public static Transform[,] grid = new Transform[0, 0]; // fix later
+    public static Transform[,] grid = new Transform[width, height];
     
     void Update()
     {
@@ -55,6 +55,7 @@ public class Tetromino : MonoBehaviour
             {
                 transform.position -= Vector3.down;
                 this.enabled = false;
+                AddToGrid();
                 FindObjectOfType<Spawner>().SpawnTertomino();
             }
             previousTime = Time.time;
@@ -72,7 +73,23 @@ public class Tetromino : MonoBehaviour
             {
                 return false;
             }
+
+            if (grid[x, y] != null)
+            {
+                return false;
+            }
         }
         return true;
+    }
+
+    public void AddToGrid()
+    {
+        foreach (Transform child in transform)
+        {
+            int x = Mathf.RoundToInt(child.transform.position.x);
+            int y = Mathf.RoundToInt(child.transform.position.y);
+
+            grid[x, y] = child;
+        }
     }
 }
