@@ -7,8 +7,8 @@ public class Tetromino : MonoBehaviour
 {
     private float previousTime;
     public float fallTime;
-    public static int width;
-    public static int height;
+    public static int width = 18;
+    public static int height = 23;
     public Vector3 rotationPoint;
     public static Transform[,] grid = new Transform[width, height];
     
@@ -53,9 +53,11 @@ public class Tetromino : MonoBehaviour
             transform.position += Vector3.down;
             if (!ValidMove())
             {
+                Debug.Log("hi");
                 transform.position -= Vector3.down;
                 this.enabled = false;
                 AddToGrid();
+                CheckLines();
                 FindObjectOfType<Spawner>().SpawnTertomino();
             }
             previousTime = Time.time;
@@ -69,7 +71,7 @@ public class Tetromino : MonoBehaviour
             int x = Mathf.RoundToInt(child.transform.position.x);
             int y = Mathf.RoundToInt(child.transform.position.y);
             
-            if (x < -4 || y < -2 || x >= width || y >= height)
+            if (x < 0 || y < 0 || x >= width || y >= height)
             {
                 return false;
             }
@@ -90,6 +92,56 @@ public class Tetromino : MonoBehaviour
             int y = Mathf.RoundToInt(child.transform.position.y);
 
             grid[x, y] = child;
+        }
+    }
+
+    private void CheckLines()
+    {
+        for (int i = height - 1; i >= 0; i--)
+        {
+            if (HasLine(i))
+            {
+                DeleteLine(i);
+                RowDown(i);
+            }
+        }
+    }
+
+    private bool HasLine(int i)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            if (grid[j, i] == null)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private void DeleteLine(int i)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            Destroy(grid[j, i].gameObject);
+            grid[j, i] = null;
+        }
+    }
+
+    private void RowDown(int i)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                if (grid[x, y] != null)
+                {
+                    grid[x, y - 1] = grid[x, y];
+                    grid[x, y] = null;
+                    grid[x, y - 1].transform.position += Vector3.down;
+                }
+            }
         }
     }
 }
