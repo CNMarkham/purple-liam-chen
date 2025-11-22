@@ -116,7 +116,6 @@ public class Tetromino : MonoBehaviour
                 return false;
             }
         }
-
         return true;
     }
 
@@ -131,7 +130,7 @@ public class Tetromino : MonoBehaviour
 
     private void RowDown(int i)
     {
-        for (int y = 0; y < height; y++)
+        for (int y = i; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
