@@ -6,7 +6,7 @@ public class Crusher1 : MonoBehaviour
 {
     public float speed;
 
-    private void FixedUpdate()
+    /*private void FixedUpdate()
     {
         if (transform.position.x <= -8 || transform.position.x >= 8)
         {
@@ -16,5 +16,10 @@ public class Crusher1 : MonoBehaviour
         float newYPos = transform.position.y;
         Vector2 newPos = new Vector2(newXPos, newYPos);
         transform.position = newPos;
+    }*/
+
+    void Start()
+    {
+        GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed, ForceMode2D.Impulse);
     }
 }
