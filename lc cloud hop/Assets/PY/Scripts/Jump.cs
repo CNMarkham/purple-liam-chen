@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jump : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float jumpForce = 15;
+    private float jumpPower = 12;
 
     void Start()
     {
@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
     }
 }
