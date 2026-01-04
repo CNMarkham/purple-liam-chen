@@ -19,8 +19,8 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 0.15f);
-        Debug.DrawRay(transform.position, Vector3.down * 0.15f, Color.red);
+        isGrounded = Physics.Raycast(gameObject.transform.position, Vector3.down, 0.15f);
+        Debug.DrawRay(gameObject.transform.position, Vector3.down * 0.15f, Color.red);
 
         if(Input.GetButtonDown("Jump") && isGrounded){
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
