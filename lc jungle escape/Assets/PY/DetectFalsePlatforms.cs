@@ -8,7 +8,7 @@ public class DetectFalsePlatforms : MonoBehaviour
     public LayerMask layer = 1<< 8;
     void Update()
     {
-        hit = Physics.Raycast(gameObject.transform.position, transform.forward, 0.15f, layer);
+        hit = Physics.Raycast(gameObject.transform.position, transform.forward, 2, layer);
         Debug.DrawRay(gameObject.transform.position, transform.forward * 2, Color.blue);
 
         if (hit == true)
