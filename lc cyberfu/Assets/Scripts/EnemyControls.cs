@@ -14,8 +14,8 @@ public class EnemyControls : MonoBehaviour
     [SerializeField]
     private bool isFollowingTarget;
 
-    // private float currentAttackingTime = 0f;
-    // private float maxAttackingTime = 2f;
+    private float currentAttackingTime = 0f;
+    private float maxAttackingTime = 2f;
 
     void Start()
     {
@@ -43,5 +43,14 @@ public class EnemyControls : MonoBehaviour
     void Attack()
     {
         rigidbodyEnemy.velocity = Vector3.zero;
+
+        currentAttackingTime += Time.deltaTime;
+
+        if (currentAttackingTime > maxAttackingTime)
+        {
+            currentAttackingTime = 0f;
+            int rand = Random.Range(1, 7);
+            animatorEnemy.SetTrigger("Attack" + rand);
+        }
     }
 }
