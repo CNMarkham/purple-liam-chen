@@ -35,7 +35,7 @@ public class PlayerControls : MonoBehaviour
 
     void Start() {
         // currentLevel and score are initialized with values on Awake
-        currentLevel = 1;
+        currentLevel = 20;
         score = 0;
         myRigidBody = GetComponent<Rigidbody>();
     }
@@ -84,18 +84,13 @@ public class PlayerControls : MonoBehaviour
             \*****************************/
 
             Instantiate(projectile, transform.position, transform.rotation);
-            if (currentLevel >= 3)
-            {
-                Vector3 rightOffset = new Vector3(0.2f, 0, 0);
-                Vector3 leftOffset = new Vector3(-0.2f, 0, 0);
-                Instantiate(projectile, transform.position + rightOffset, transform.rotation);
-                Instantiate(projectile, transform.position + leftOffset, transform.rotation);
-            }
 
-            if (currentLevel >= 5)
+            int projectileAmount = (currentLevel - (currentLevel % 2)) / 2;
+
+            for (int i = 0; i <= projectileAmount; i++)
             {
-                Vector3 rightOffset = new Vector3(0.4f, 0, 0);
-                Vector3 leftOffset = new Vector3(-0.4f, 0, 0);
+                Vector3 rightOffset = new Vector3(0.1f * i, 0, 0);
+                Vector3 leftOffset = new Vector3(-0.1f * i, 0, 0);
                 Instantiate(projectile, transform.position + rightOffset, transform.rotation);
                 Instantiate(projectile, transform.position + leftOffset, transform.rotation);
             }
