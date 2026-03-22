@@ -3057,6 +3057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1875767817}
+  HealthBar: {fileID: 884183836}
 --- !u!4 &1776441888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a3614c18f3e6c7142832df541b2a093c, type: 3}
@@ -3830,6 +3831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1875767817}
+  HealthBar: {fileID: 884183836}
 --- !u!4 &365266794849478841
 Transform:
   m_ObjectHideFlags: 0
