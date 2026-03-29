@@ -21,7 +21,7 @@ public class PickUpKey : MonoBehaviour
         m_renderer.enabled = false;
         m_particle.Stop();
         allParticles.Play();
-        //HealthBar.GetComponent<LifeHUD>().HealPlayer();
+        HealthBar.GetComponent<LifeHUD>().HealPlayer();
         //Debug.Log("Hit!");
     }
 
