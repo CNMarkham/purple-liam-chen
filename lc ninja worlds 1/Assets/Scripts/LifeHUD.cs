@@ -10,7 +10,7 @@ public class LifeHUD : MonoBehaviour
 
     void Start()
     {
-        hearts = GameObject.FindGameObjectsWithTag("heart");
+        
     }
 
     public void HurtPlayer()
