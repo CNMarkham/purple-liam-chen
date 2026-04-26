@@ -5,6 +5,7 @@ using UnityEngine;
 public class LifeHUD : MonoBehaviour
 {
     // create a reference for the hearts in the UI
+    [SerializeField]
     private GameObject[] hearts;
     // give Codey three lives
     private int lives = 3;

@@ -9,7 +9,10 @@ public class ButtonContinue : MonoBehaviour
     // Based on File -> Build Settings -> "Scenes In Build"
     public void Reset()
     {
-        SceneManager.LoadScene(0);
+        Debug.Log(SceneManager.GetActiveScene().name);
+        string name = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(name);
+        Debug.Log(SceneManager.GetActiveScene().name);
     }
 
     // Asks the SceneManager to load the scene with the specific name of "Level1_A"
