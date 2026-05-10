@@ -13,6 +13,9 @@ public class InterfaceManager : MonoBehaviour
     public GameObject npc;
     public GameObject randomSpawn;
 
+    public Image collectible;
+    public GameObject showSprite;
+
     [SerializeField]
     private Sprite[] collectibleSource;
 
@@ -20,6 +23,7 @@ public class InterfaceManager : MonoBehaviour
     void Start()
     {
         dialogueBox.SetActive(false);
+        showSprite.SetActive(false);
     }
 
     // Update is called once per frame
@@ -28,12 +32,18 @@ public class InterfaceManager : MonoBehaviour
         if (Input.GetButton("Submit") && dialogueBox.activeInHierarchy)
         {
             dialogueBox.SetActive(false);
+
+            if (npc.GetComponent<DialogueOpen>().end)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 
     public void CollectibleUpdate(int item)
     {
-
+        showSprite.SetActive(true);
+        collectible.GetComponent<Image>().sprite = collectibleSource[item];
     }
 
     public void ShowBox(string dialogue, int item)
