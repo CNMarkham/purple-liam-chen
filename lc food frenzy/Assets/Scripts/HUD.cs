@@ -23,11 +23,20 @@ public class HUD : MonoBehaviour
 
     void Start()
     {
-        
+        if (!instance)
+        {
+            instance = this;
+            UpdateStars();
+        }
     }
 
     void Update()
     {
         
+    }
+
+    public void UpdateStars()
+    {
+        starsImage.sprite = stars[starIndex];
     }
 }
