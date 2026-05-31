@@ -10,8 +10,12 @@
     void Start()
     {
         type = LevelType.OBSTACLE;
+        HUD.instance.SetLevelType(type);
+        HUD.instance.SetScore(currentScore);
+        HUD.instance.SetTarget(numObstaclesLeft);
+        HUD.instance.SetRemaining(numMoves);
 
-        for(int i=0; i<obstacleTypes.Length; i++)
+        for (int i=0; i<obstacleTypes.Length; i++)
         {
             numObstaclesLeft += grid.GetPiecesOfType(obstacleTypes[i]).Count;
         }
@@ -29,6 +33,8 @@
 
         movesUsed++;
 
+        HUD.instance.SetRemaining(numMoves - movesUsed);
+
         if (numMoves - movesUsed == 0 && numObstaclesLeft > 0)
         {
             GameLose();
@@ -44,6 +50,8 @@
             if(obstacleTypes[i] == piece.Type)
             {
                 numObstaclesLeft--;
+
+                HUD.instance.SetTarget(numObstaclesLeft);
 
                 if (numObstaclesLeft == 0)
                 {

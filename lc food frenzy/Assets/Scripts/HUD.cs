@@ -83,14 +83,26 @@ public class HUD : MonoBehaviour
                 remainingLabel.text = "moves remaining";
                 targetLabel.text = "target score";
                 break;
+
             case Level.LevelType.OBSTACLE:
                 remainingLabel.text = "moves remaining";
                 targetLabel.text = "dishes remaining";
                 break;
+
             case Level.LevelType.TIMER:
                 remainingLabel.text = "time remaining";
                 targetLabel.text = "target";
                 break;
         }
+    }
+
+    public void OnGameWin(int score)
+    {
+        isGameOver = true;
+    }
+
+    public void OnGameLose()
+    {
+        isGameOver = false;
     }
 }
