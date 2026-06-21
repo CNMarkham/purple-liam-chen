@@ -17,7 +17,7 @@ public class HUD : MonoBehaviour
     public Sprite[] stars;
 
     private int starIndex;
-    private bool isGameOver;
+    // private bool isGameOver;
 
     public static HUD instance;
 
@@ -98,11 +98,13 @@ public class HUD : MonoBehaviour
 
     public void OnGameWin(int score)
     {
-        isGameOver = true;
+        GetComponent<Canvas>().sortingOrder = 3;
+        GameOver.instance.ShowWin(score, starIndex);
     }
 
     public void OnGameLose()
     {
-        isGameOver = false;
+        GetComponent<Canvas>().sortingOrder = 3;
+        GameOver.instance.ShowLose();
     }
 }
