@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class HUD : MonoBehaviour
@@ -100,6 +101,11 @@ public class HUD : MonoBehaviour
     {
         GetComponent<Canvas>().sortingOrder = 3;
         GameOver.instance.ShowWin(score, starIndex);
+
+        if (starIndex > PlayerPrefs.GetInt(SceneManager.GetActiveScene().name, 0))
+        {
+            PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, starIndex);
+        }
     }
 
     public void OnGameLose()
